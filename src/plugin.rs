@@ -797,7 +797,7 @@ impl HostCallback {
     /// Also please be aware that requesting information does not necessarily mean that that information is provided in return.
     /// Check the flags field in the `TimeInfo` structure to see if your request was actually met.
     #[allow(unused)]
-    fn get_time_info(&self, mask: i32) -> Option<TimeInfo> {
+    pub fn get_time_info(&self, mask: i32) -> Option<TimeInfo> {
         if self.callback.is_none() {
             return None
         }
