@@ -693,6 +693,12 @@ pub trait Plugin {
 
     /// Called after the stop of process call.
     fn stop_process(&self) {}
+
+    /// Number of MIDI input channels (1-16), or 0 for the default of 16 channels (or none in some hosts).
+    fn midi_input_channel_count(&self) -> u8 { 0 }
+
+    /// Number of MIDI output channels (1-16), or 0 for the default of 16 channels (or none in some hosts).
+    fn midi_output_channel_count(&self) -> u8 { 0 }
 }
 
 /// A reference to the host which allows the plugin to call back and access information.
