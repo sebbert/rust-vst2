@@ -229,13 +229,9 @@ pub fn dispatch(effect: *mut AEffect, opcode: i32, index: i32, value: isize, ptr
             }
         }
 
-        OpCode::StartProcess => {
-            plugin.start_process()
-        }
+        OpCode::StartProcess => plugin.start_process(),
+        OpCode::StopProcess => plugin.stop_process(),
 
-        OpCode::StopProcess => {
-            plugin.stop_process()
-        }
 
         _ => {
             warn!("Unimplemented opcode ({:?})", opcode);
