@@ -235,7 +235,7 @@ pub fn dispatch(effect: *mut AEffect, opcode: i32, index: i32, value: isize, ptr
         OpCode::GetNumMidiInputs => return plugin.midi_input_channel_count() as isize,
         OpCode::GetNumMidiOutputs => return plugin.midi_output_channel_count() as isize,
 
-        _Idle => {},
+        OpCode::_Idle => plugin.idle(),
 
         _ => {
             warn!("Unimplemented opcode ({:?})", opcode);

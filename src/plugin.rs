@@ -699,6 +699,9 @@ pub trait Plugin {
 
     /// Number of MIDI output channels (1-16), or 0 for the default of 16 channels (or none in some hosts).
     fn midi_output_channel_count(&self) -> u8 { 0 }
+
+    /// May be called by the host while the plugin is idle
+    fn idle(&self) { }
 }
 
 /// A reference to the host which allows the plugin to call back and access information.
